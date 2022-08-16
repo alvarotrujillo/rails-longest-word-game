@@ -1,0 +1,16 @@
+<p>Randomly generated letters:</p>
+<%= @letters %>
+<br>
+<br>
+<form action="/score" data-turbo="false">
+  <input type="text"
+  name="userWord"
+  value="<%= params[:userWord]%>"
+  placeholder="Type it here!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit"
+  name="play-button"
+  placeholder="Play now!"
+  value="Submit">
+  <%= hidden_field_tag 'letters', @letters %>
+</form>
